@@ -1,16 +1,16 @@
-const CACHE = 'medichora-v2';
+const CACHE = 'medichora-v3'; // mude a versão!
 const ASSETS = [
   'index.html','cadastro.html','sobre.html',
-  'css/estilo.css',
-  'js/app.js','js/storage.js','js/pwa.js','js/cadastro.js',
+  'estilo.css',
+  'app.js','storage.js','pwa.js','cadastro.js',
   'manifest.json',
-  'assets/sounds/som_alerta.wav'
+  'icon-192.png','icon-512.png',
+  'som_alerta.wav' // ajuste para o seu caminho real
 ];
 
 self.addEventListener('install', e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));
 });
-
 self.addEventListener('activate', e=>{
   e.waitUntil(
     caches.keys().then(keys =>
@@ -18,9 +18,6 @@ self.addEventListener('activate', e=>{
     )
   );
 });
-
 self.addEventListener('fetch', e=>{
-  e.respondWith(
-    caches.match(e.request).then(r => r || fetch(e.request))
-  );
+  e.respondWith(caches.match(e.request).then(r=> r || fetch(e.request)));
 });
