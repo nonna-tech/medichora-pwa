@@ -1,67 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MedicHora — Lembretes acessíveis</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="css/estilo.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="app-dot" aria-hidden="true"></div>
-      <h1 aria-label="MedicHora">MedicHora</h1>
-    </div>
-    <nav>
-      <a class="link" href="cadastro.html" aria-label="Cadastrar novo remédio">+ Cadastrar</a>
-      <a class="link" href="sobre.html">Sobre</a>
-      <button id="installBtn" class="btn ghost" aria-label="Instalar app">Instalar</button>
-    </nav>
-  </header>
+<!-- antes: <link rel="stylesheet" href="css/estilo.css" /> -->
+<link rel="stylesheet" href="estilo.css" />
 
-  <main class="container">
-    <section>
-      <h2 class="section-title">Meus medicamentos</h2>
-      <div id="lista" class="grid"></div>
-      <p id="vazio" class="muted">Nenhum medicamento cadastrado. Clique em <strong>+ Cadastrar</strong> para começar.</p>
-    </section>
-  </main>
-
-  <template id="cardTemplate">
-    <article class="card" role="group">
-      <div class="card-header">
-        <div class="pill" aria-hidden="true"></div>
-        <div class="title-area">
-          <h3 class="card-title"></h3>
-          <div class="dose"></div>
-        </div>
-      </div>
-      <div class="next-time"></div>
-      <div class="actions">
-        <button class="btn primary btn-ouvir">Ouvir</button>
-        <button class="btn success btn-tomar">Tomar agora</button>
-        <button class="btn ghost btn-editar">Editar</button>
-        <button class="btn danger btn-excluir">Excluir</button>
-      </div>
-    </article>
-  </template>
-
-  <div id="alarme" class="alarm hidden" role="dialog" aria-live="assertive" aria-label="Alerta de medicamento">
-    <div class="alarm-box">
-      <div class="alarm-icon" aria-hidden="true"></div>
-      <h3>Hora do remédio!</h3>
-      <p id="alarmTexto" class="alarm-text"></p>
-      <div class="alarm-actions">
-        <button id="btnAlarmOuvir" class="btn primary">Ouvir instruções</button>
-        <button id="btnAlarmTomar" class="btn success">Tomar agora</button>
-        <button id="btnAlarmSnooze" class="btn ghost">Lembrar em 5 min</button>
-      </div>
-    </div>
-  </div>
-
-  <script type="module" src="js/storage.js"></script>
-  <script type="module" src="js/app.js"></script>
-  <script src="js/pwa.js"></script>
-</body>
-</html>
+<!-- scripts -->
+<!-- antes: type="module" src="js/storage.js" e src="js/app.js" -->
+<script type="module" src="storage.js"></script>
+<script type="module" src="app.js"></script>
+<script src="pwa.js"></s
