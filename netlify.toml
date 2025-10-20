@@ -1,0 +1,5 @@
+# Netlify configuration for MedicHora PWA
+[[headers]]
+for = "/service-worker.js"
+  [headers.values]
+  Cache-Control = "no-cache"
